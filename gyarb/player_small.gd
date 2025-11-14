@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name PlayerBig
+class_name PlayerSmall
 
 
 
@@ -62,9 +62,9 @@ func _update_direction(input_x: float) -> void:
 ############### STATE FUNCTIONS ########################
 func _idle_state(delta: float) -> void:
 	#1
-	if Input.is_action_just_pressed("big_jump"):
+	if Input.is_action_just_pressed("small_jump"):
 		_enter_air_state(true)
-	var input_x = Input.get_axis("big_move_left", "big_move_right")
+	var input_x = Input.get_axis("small_move_left", "small_move_right")
 	_update_direction(input_x)
 	#2
 	_movement(delta, input_x)
@@ -76,9 +76,9 @@ func _idle_state(delta: float) -> void:
 	
 func _walk_state(delta: float) -> void:
 	#1
-	if Input.is_action_just_pressed("big_jump"):
+	if Input.is_action_just_pressed("small_jump"):
 		_enter_air_state(true)
-	var input_x = Input.get_axis("big_move_left", "big_move_right")
+	var input_x = Input.get_axis("small_move_left", "small_move_right")
 	_update_direction(input_x)
 	#2
 	_movement(delta, input_x)
@@ -91,9 +91,9 @@ func _walk_state(delta: float) -> void:
 
 func _air_state(delta: float) -> void:
 	#1
-	if Input.is_action_just_pressed("big_jump"):
+	if Input.is_action_just_pressed("small_jump"):
 		want_to_jump = true
-	var input_x = Input.get_axis("big_move_left", "big_move_right")
+	var input_x = Input.get_axis("small_move_left", "small_move_right")
 	_update_direction(input_x)
 	#2
 	_movement(delta, input_x)
