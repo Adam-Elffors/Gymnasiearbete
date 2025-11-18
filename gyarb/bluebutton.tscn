@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk37fwosdfedk"]
+
+[ext_resource type="Script" uid="uid://cok8g8pdrh7sh" path="res://bluebutton.gd" id="1_s1h02"]
+[ext_resource type="Texture2D" uid="uid://bj5rcmiiam81p" path="res://Blue_Button_Unpressed.png" id="2_cikll"]
+[ext_resource type="Texture2D" uid="uid://ke4luvaa0q8r" path="res://Blue_Button_Pressed.png" id="3_j0l1j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tstdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cikll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j0l1j")
+}],
+"loop": true,
+"name": &"BlueButton",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1h02"]
+size = Vector2(14, 3)
+
+[node name="Bluebutton" type="Node2D"]
+script = ExtResource("1_s1h02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tstdi")
+animation = &"BlueButton"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_s1h02")
