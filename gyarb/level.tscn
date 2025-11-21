@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://bgl6a8fiwn4hg"]
+[gd_scene load_steps=12 format=4 uid="uid://bgl6a8fiwn4hg"]
 
+[ext_resource type="Script" uid="uid://cysbnmh7ypy0u" path="res://level.gd" id="1_km5ld"]
 [ext_resource type="Texture2D" uid="uid://46wm4y7thwit" path="res://The Dawn/Reference-Image.png" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://dq7p4t7c7pc2a" path="res://player_small.tscn" id="2_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://7rg6hhum81yn" path="res://Terrain (32x32).png" id="2_vonw3"]
 [ext_resource type="PackedScene" uid="uid://e5w6bxvbq324" path="res://player_big.tscn" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://hodjuti6h714" path="res://redbutton.tscn" id="5_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dk37fwosdfedk" path="res://bluebutton.tscn" id="6_1ainy"]
+[ext_resource type="PackedScene" uid="uid://cq5eilf15dl7u" path="res://gate.tscn" id="8_i2t4f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("2_vonw3")
@@ -335,8 +337,8 @@ texture_region_size = Vector2i(32, 32)
 10:2/0 = 0
 10:2/0/terrain_set = 0
 10:2/0/terrain = 0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 7.96127, -16, 15.1826, -7.93159, 14.9847, -7.94346, 7.87026)
-10:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(7.89597, 7.25694, 7.89597, 15.0718, 16, 14.8937, 16, 7.1778)
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8.05252, -8.02602, 7.89338, -7.91992, 16, -16, 16)
+10:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(7.98406, 8.00696, 8.01329, 16, 16, 16, 16, 7.97187)
 10:2/0/terrains_peering_bit/right_side = 0
 10:2/0/terrains_peering_bit/bottom_side = 0
 10:2/0/terrains_peering_bit/left_side = 0
@@ -417,9 +419,8 @@ texture_region_size = Vector2i(32, 32)
 5:2/0 = 0
 5:2/0/terrain_set = 0
 5:2/0/terrain = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -8.08492, -16, 7.69318, -16, 16, -16)
-5:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 16, -7.91517, 16, -7.83514, -16, -16, -16)
-5:2/0/physics_layer_0/polygon_2/points = PackedVector2Array(7.77777, -16, 16, -16, 16, 16, 7.93708, 16)
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -7.60086, -16, -7.91992, 16, -16, 16)
+5:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(8.05781, -16, 8.01329, 16, 16, 16, 16, -16)
 5:2/0/terrains_peering_bit/bottom_side = 0
 5:2/0/terrains_peering_bit/top_side = 0
 5:3/0 = 0
@@ -758,6 +759,21 @@ sources/1 = SubResource("TileSetAtlasSource_0b4ue")
 z_index = -1
 position = Vector2(-1, -206)
 scale = Vector2(1.25, 1.25)
+script = ExtResource("1_km5ld")
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+z_index = -4
+position = Vector2(991, 542)
+texture = ExtResource("1_u52ul")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(80.8, 75.2)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAACAAYAAAAKAAIAAAADAAYAAAACAAMAAAACAAUAAAACAAEAAAABAAUAAAACAAEAAAAFAAUAAAAIAAIAAAAFAAYAAAACAAMAAAAEAAYAAAACAAMAAAAFAAQAAAABAAIAAAAGAAQAAAAHAAEAAAAGAAUAAAAHAAIAAAAGAAYAAAACAAMAAAADAAMAAAACAAMAAAAEAAMAAAACAAMAAAAFAAMAAAAIAAEAAAAGAAMAAAAHAAIAAAACAAMAAAACAAMAAAABAAMAAAACAAMAAAAAAAMAAAARAAIAAAAAAAIAAAABAAEAAAABAAIAAAACAAEAAAACAAIAAAACAAEAAAADAAIAAAACAAEAAAAGAAIAAAADAAEAAAAFAAIAAAACAAEAAAAEAAIAAAACAAEAAAAAAAUAAAALAAEAAAABAAYAAAACAAMAAAAHAAYAAAACAAMAAAAHAAUAAAAIAAIAAAAHAAQAAAAIAAEAAAAHAAMAAAACAAEAAAAIAAMAAAACAAEAAAAJAAMAAAADAAEAAAAJAAQAAAADAAIAAAAJAAUAAAAHAAIAAAAIAAUAAAACAAIAAAAIAAYAAAAKAAIAAAAIAAQAAAACAAIAAAAKAAUAAAADAAEAAAAJAAYAAAACAAMAAAAKAAYAAAADAAMAAAAAAAYAAAACAAMAAAD//wUAAAAKAAUAAAD//wQAAAAKAAQAAAD//wMAAAABAAEAAAAEAAUAAAACAAEAAAADAAUAAAACAAEAAAACAAcAAAAFAAIAAAACAAgAAAAQAAUAAAADAAgAAAAIAAQAAAADAAkAAAABAAMAAAAEAAkAAAACAAMAAAAFAAkAAAAIAAEAAAAFAAoAAAABAAMAAAAGAAoAAAACAAMAAAAHAAoAAAADAAMAAAAHAAkAAAADAAIAAAAGAAgAAAACAAEAAAAFAAgAAAACAAEAAAAEAAgAAAACAAEAAAAGAAkAAAACAAIAAAAHAAgAAAAHAAQAAAAIAAgAAAARAAUAAAD//wYAAAABAAMAAAAAAAQAAAALAAQAAAAIAAcAAAAFAAIAAAA=")
+tile_set = SubResource("TileSet_oi3di")
 
 [node name="PlayerBig" parent="." instance=ExtResource("3_oi3di")]
 z_index = 1
@@ -765,22 +781,8 @@ position = Vector2(143.2, 583.2)
 
 [node name="PlayerSmall" parent="." instance=ExtResource("2_0b4ue")]
 z_index = 1
-position = Vector2(212.8, 599.2)
+position = Vector2(212.8, 597.6)
 scale = Vector2(2, 2)
-
-[node name="BG" type="CanvasLayer" parent="."]
-layer = -2
-
-[node name="Sprite2D" type="Sprite2D" parent="BG"]
-z_index = -4
-position = Vector2(987, 540)
-texture = ExtResource("1_u52ul")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(80.8, 75.2)
-scale = Vector2(2.5, 2.5)
-tile_map_data = PackedByteArray("AAACAAYAAAAKAAIAAAADAAYAAAAHAAUAAAACAAUAAAACAAEAAAABAAUAAAACAAEAAAADAAUAAAADAAEAAAAFAAUAAAABAAIAAAAFAAYAAAAIAAUAAAAEAAYAAAACAAUAAAAFAAQAAAABAAIAAAAGAAQAAAACAAIAAAAGAAUAAAACAAIAAAAGAAYAAAAKAAIAAAAGAAcAAAAFAAMAAAADAAMAAAACAAMAAAAEAAMAAAACAAMAAAAFAAMAAAAIAAEAAAAGAAMAAAAHAAIAAAACAAMAAAACAAMAAAABAAMAAAACAAMAAAAAAAQAAAADAAIAAAAAAAMAAAARAAIAAAAAAAIAAAABAAEAAAABAAIAAAACAAEAAAACAAIAAAACAAEAAAADAAIAAAACAAEAAAAGAAIAAAADAAEAAAAFAAIAAAACAAEAAAAEAAIAAAACAAEAAAAAAAUAAAAQAAIAAAABAAYAAAACAAMAAAAHAAYAAAACAAMAAAAHAAUAAAACAAIAAAAHAAQAAAACAAIAAAAHAAMAAAACAAEAAAAIAAMAAAACAAEAAAAJAAMAAAADAAEAAAAJAAQAAAADAAIAAAAJAAUAAAAHAAIAAAAIAAUAAAACAAIAAAAIAAYAAAACAAMAAAAIAAQAAAACAAIAAAAKAAUAAAADAAEAAAAJAAYAAAACAAMAAAAKAAYAAAADAAMAAAAAAAYAAAABAAMAAAD//wUAAAABAAMAAAD//wQAAAABAAIAAAD//wMAAAABAAEAAAACAAcAAAAFAAMAAAA=")
-tile_set = SubResource("TileSet_oi3di")
 
 [node name="Redbutton" parent="." instance=ExtResource("5_f2txt")]
 position = Vector2(352, 348.8)
@@ -789,3 +791,7 @@ scale = Vector2(2.5, 2.5)
 [node name="Bluebutton" parent="." instance=ExtResource("6_1ainy")]
 position = Vector2(247.2, 348.8)
 scale = Vector2(2.5, 2.5)
+
+[node name="Gate" parent="." instance=ExtResource("8_i2t4f")]
+position = Vector2(884, 561.6)
+scale = Vector2(1.5, 1.5)

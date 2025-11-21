@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 			_walk_state(delta)
 		AIR:
 			_air_state(delta)
+	
+	print(is_on_floor())
 
 
 ############### GENERAL HELP FUNCTIONS ########################

@@ -1,11 +1,29 @@
-extends Node2D
+extends StaticBody2D
+class_name RedButton
+
+signal RedButtonPressed
+signal RedButtonNotPressed
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$AnimatedSprite2D.play("RedButtonNotPressed")
+	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	pass
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is PlayerBig:
+		emit_signal("RedButtonPressed")
+		$AnimatedSprite2D.play("RedButtonPressed")
+	
+		
+
+		
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is PlayerBig:
+		emit_signal("RedButtonNotPressed")
+		$AnimatedSprite2D.play("RedButtonNotPressed")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk37fwosdfedk"]
+[gd_scene load_steps=7 format=3 uid="uid://dk37fwosdfedk"]
 
 [ext_resource type="Script" uid="uid://cok8g8pdrh7sh" path="res://bluebutton.gd" id="1_s1h02"]
 [ext_resource type="Texture2D" uid="uid://bj5rcmiiam81p" path="res://Blue_Button_Unpressed.png" id="2_cikll"]
@@ -9,27 +9,45 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_cikll")
+}],
+"loop": true,
+"name": &"BlueButtonNotPressed",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_j0l1j")
 }],
 "loop": true,
-"name": &"BlueButton",
+"name": &"BlueButtonPressed",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1h02"]
 size = Vector2(14, 3)
 
-[node name="Bluebutton" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cikll"]
+size = Vector2(20, 5)
+
+[node name="Bluebutton" type="StaticBody2D"]
 script = ExtResource("1_s1h02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tstdi")
-animation = &"BlueButton"
+animation = &"BlueButtonPressed"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_s1h02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_cikll")
+debug_color = Color(8.66354e-07, 0.497297, 0.581617, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
