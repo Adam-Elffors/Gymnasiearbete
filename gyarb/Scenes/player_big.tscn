@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://e5w6bxvbq324"]
 
-[ext_resource type="Script" uid="uid://cs12ct3p1cily" path="res://playerbig.gd" id="1_lueux"]
+[ext_resource type="Script" uid="uid://cs12ct3p1cily" path="res://Scripts/playerbig.gd" id="1_lueux"]
 [ext_resource type="Texture2D" uid="uid://c0a1rntxpo7yn" path="res://Eris Esra's Character Template/16x16 Idle-Sheet.png" id="1_twc7x"]
 [ext_resource type="Texture2D" uid="uid://ctcaye0y6pxtp" path="res://Eris Esra's Character Template/16x16 Walk Cycle-Sheet.png" id="2_4w7rf"]
 

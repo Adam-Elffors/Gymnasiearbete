@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbnao0numrxoa"]
+
+[ext_resource type="Script" uid="uid://1q604voukdsh" path="res://Scripts/red_portal.gd" id="1_ijj6j"]
+[ext_resource type="Texture2D" uid="uid://c26od625yrpgq" path="res://portals.png" id="2_q6p3k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijj6j"]
+atlas = ExtResource("2_q6p3k")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6p3k"]
+atlas = ExtResource("2_q6p3k")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m3ng"]
+atlas = ExtResource("2_q6p3k")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68a8v"]
+atlas = ExtResource("2_q6p3k")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbxpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijj6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6p3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m3ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68a8v")
+}],
+"loop": true,
+"name": &"RedPortal",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afpco"]
+height = 40.0
+
+[node name="RedPortal" type="Node2D"]
+script = ExtResource("1_ijj6j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbxpk")
+animation = &"RedPortal"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_afpco")
+
+[node name="TeleportCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="TeleportCooldown" to="." method="_on_timer_timeout"]

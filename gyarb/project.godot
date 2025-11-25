@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="gyarb"
-run/main_scene="res://level.tscn"
+run/main_scene="res://Scenes/level.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1452
-window/size/viewport_height=948
+window/size/viewport_width=1550
+window/size/viewport_height=1050
 
 [input]
 
@@ -61,6 +61,8 @@ small_jump={
 2d_physics/layer_4="RedButton"
 2d_physics/layer_5="BlueButton"
 2d_physics/layer_6="Gate"
+2d_physics/layer_7="BluePortal"
+2d_physics/layer_8="RedPortal"
 
 [rendering]
 

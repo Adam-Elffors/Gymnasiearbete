@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgl407kn5y6gx"]
+
+[ext_resource type="Texture2D" uid="uid://c26od625yrpgq" path="res://portals.png" id="1_0l0ya"]
+[ext_resource type="Script" uid="uid://dnn5bqvmjrd3j" path="res://Scripts/blue_portal.gd" id="1_pabwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pabwo"]
+atlas = ExtResource("1_0l0ya")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afpco"]
+atlas = ExtResource("1_0l0ya")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wejlm"]
+atlas = ExtResource("1_0l0ya")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlud6"]
+atlas = ExtResource("1_0l0ya")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbxpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pabwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afpco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wejlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlud6")
+}],
+"loop": true,
+"name": &"BluePortal",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afpco"]
+height = 40.0
+
+[node name="BluePortal" type="Node2D"]
+script = ExtResource("1_pabwo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbxpk")
+animation = &"BluePortal"
+frame = 1
+frame_progress = 0.271861
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_afpco")
+
+[node name="TeleportCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="TeleportCooldown" to="." method="_on_timer_timeout"]

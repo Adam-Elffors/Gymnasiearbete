@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cq5eilf15dl7u"]
 
 [ext_resource type="Texture2D" uid="uid://otvqlrrrw87p" path="res://door.png" id="1_15vrf"]
-[ext_resource type="Script" uid="uid://c75taf3afujxd" path="res://gate.gd" id="2_ikl61"]
+[ext_resource type="Script" uid="uid://c75taf3afujxd" path="res://Scripts/gate.gd" id="2_ikl61"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikl61"]
 atlas = ExtResource("1_15vrf")
@@ -49,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jhui3")
 }],
-"loop": true,
+"loop": false,
 "name": &"DoorOpening",
 "speed": 5.0
 }]
@@ -63,6 +63,8 @@ script = ExtResource("2_ikl61")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6qcw8")
 animation = &"DoorOpening"
+frame = 4
+frame_progress = 0.57332
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
