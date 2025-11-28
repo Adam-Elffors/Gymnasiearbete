@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bgl6a8fiwn4hg"]
+[gd_scene load_steps=15 format=4 uid="uid://bgl6a8fiwn4hg"]
 
 [ext_resource type="Script" uid="uid://cysbnmh7ypy0u" path="res://Scripts/level.gd" id="1_754fn"]
 [ext_resource type="Texture2D" uid="uid://46wm4y7thwit" path="res://The Dawn/Reference-Image.png" id="2_bvt00"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5eilf15dl7u" path="res://Scenes/gate.tscn" id="8_c7le1"]
 [ext_resource type="PackedScene" uid="uid://bgl407kn5y6gx" path="res://Scenes/blue_portal.tscn" id="9_bvt00"]
 [ext_resource type="PackedScene" uid="uid://cbnao0numrxoa" path="res://Scenes/red_portal.tscn" id="10_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://dbaha6x2va1yi" path="res://Scenes/crate.tscn" id="11_qxfql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("3_oqgf2")
@@ -748,7 +749,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_oi3di"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 2
+physics_layer_0/collision_mask = 262
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Brick"
 terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
@@ -817,3 +818,6 @@ target_portal_red = NodePath("../RedPortal2")
 position = Vector2(268, 343.2)
 scale = Vector2(1.5, 1.5)
 target_portal_red = NodePath("../RedPortal")
+
+[node name="Crate" parent="." instance=ExtResource("11_qxfql")]
+position = Vector2(374.4, 337.6)

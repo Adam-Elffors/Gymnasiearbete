@@ -7,7 +7,8 @@ const MAX_SPEED = 300
 const ACC = 2500
 const JUMP_VELOCITY = 600
 const GRAVITY = 1250
-
+const PUSH_FORCE = 100
+const MAX_VELOCITY = 150
 
 enum{IDLE, WALK, AIR}
 
@@ -18,7 +19,7 @@ var jump_buffer: float = 0.0
 
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var box_ray2: RayCast2D = $BoxRay2
 
 ############### GAME LOOP ##############################
 func _physics_process(delta: float) -> void:
@@ -29,6 +30,7 @@ func _physics_process(delta: float) -> void:
 			_walk_state(delta)
 		AIR:
 			_air_state(delta)
+	
 
 
 ############### GENERAL HELP FUNCTIONS ########################
@@ -48,6 +50,18 @@ func _movement(delta: float, input_x: float) -> void:
 		else:
 			velocity.y = move_toward(velocity.y, 0, ACC*delta)
 		velocity.x += -up_direction.x * GRAVITY * delta
+		
+		if not box_ray2.is_colliding():
+			for i in get_slide_collision_count():
+				var collision = get_slide_collision(i)
+				var collision_crate = collision.get_collider()
+				if collision_crate.is_in_group("Crates") and abs(collision_crate.get_linear_velocity().x) < MAX_VELOCITY:
+						collision_crate.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
+						if velocity.y > 0:
+							velocity.y = 0
+			
+			
+		
 		apply_floor_snap()
 		move_and_slide()
 

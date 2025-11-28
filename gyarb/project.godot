@@ -63,6 +63,7 @@ small_jump={
 2d_physics/layer_6="Gate"
 2d_physics/layer_7="BluePortal"
 2d_physics/layer_8="RedPortal"
+2d_physics/layer_9="Crate"
 
 [rendering]
 

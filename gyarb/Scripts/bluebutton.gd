@@ -17,6 +17,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is PlayerSmall:
 		emit_signal("BlueButtonPressed")
 		$AnimatedSprite2D.play("BlueButtonPressed")
+	elif body.is_in_group("Crates"):
+		emit_signal("RedButtonPressed")
+		$AnimatedSprite2D.play("RedButtonPressed")
 	
 		
 
@@ -27,6 +30,10 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is PlayerSmall:
 		emit_signal("BlueButtonNotPressed")
 		$AnimatedSprite2D.play("BlueButtonNotPressed")
+	elif body.is_in_group("Crates"):
+		emit_signal("BlueButtonNotPressed")
+		$AnimatedSprite2D.play("BlueButtonNotPressed")
+		
 
 
 
