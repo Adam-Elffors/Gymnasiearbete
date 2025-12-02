@@ -8,7 +8,7 @@ const ACC = 2500
 const JUMP_VELOCITY = 600
 const GRAVITY = 1250
 const PUSH_FORCE = 100
-const MAX_VELOCITY = 150
+const MAX_VELOCITY = 60
 
 enum{IDLE, WALK, AIR}
 
@@ -42,14 +42,8 @@ func _movement(delta: float, input_x: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, ACC*delta)
 			
 		velocity.y += -up_direction.y * GRAVITY * delta
-		apply_floor_snap()
-		move_and_slide()
-	else:
-		if input_x != 0:
-			velocity.y =  move_toward(velocity.y, input_x*MAX_SPEED*(cos(up_direction.angle())), ACC*delta)
-		else:
-			velocity.y = move_toward(velocity.y, 0, ACC*delta)
-		velocity.x += -up_direction.x * GRAVITY * delta
+		
+
 		
 		if not box_ray2.is_colliding():
 			for i in get_slide_collision_count():
@@ -62,6 +56,14 @@ func _movement(delta: float, input_x: float) -> void:
 			
 			
 		
+		apply_floor_snap()
+		move_and_slide()
+	else:
+		if input_x != 0:
+			velocity.y =  move_toward(velocity.y, input_x*MAX_SPEED*(cos(up_direction.angle())), ACC*delta)
+		else:
+			velocity.y = move_toward(velocity.y, 0, ACC*delta)
+		velocity.x += -up_direction.x * GRAVITY * delta
 		apply_floor_snap()
 		move_and_slide()
 

@@ -107,5 +107,5 @@ shape = SubResource("CapsuleShape2D_twc7x")
 
 [node name="BoxRay2" type="RayCast2D" parent="."]
 position = Vector2(0, 21)
-target_position = Vector2(0, 20)
+target_position = Vector2(0, 15)
 collision_mask = 256

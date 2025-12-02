@@ -34,7 +34,7 @@ script = ExtResource("1_s1h02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tstdi")
-animation = &"BlueButtonPressed"
+animation = &"BlueButtonNotPressed"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

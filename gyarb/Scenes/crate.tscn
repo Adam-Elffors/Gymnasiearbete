@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c5s8h287ycm0v" path="res://Crate.png" id="1_wp72f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp72f"]
-size = Vector2(500, 505)
+size = Vector2(450, 500)
 
 [node name="Crate" type="RigidBody2D" groups=["Crates"]]
 collision_layer = 256
@@ -13,7 +13,7 @@ lock_rotation = true
 script = ExtResource("1_i4r3v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.199999)
+position = Vector2(0, 3.8743e-07)
 scale = Vector2(0.08, 0.08)
 shape = SubResource("RectangleShape2D_wp72f")
 

@@ -18,8 +18,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		emit_signal("BlueButtonPressed")
 		$AnimatedSprite2D.play("BlueButtonPressed")
 	elif body.is_in_group("Crates"):
-		emit_signal("RedButtonPressed")
-		$AnimatedSprite2D.play("RedButtonPressed")
+		emit_signal("BlueButtonPressed")
+		$AnimatedSprite2D.play("BlueButtonPressed")
 	
 		
 
