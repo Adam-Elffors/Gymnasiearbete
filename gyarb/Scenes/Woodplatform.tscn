@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckywpu2k2qw1y"]
 
 [ext_resource type="Texture2D" uid="uid://uuin0j37nvfe" path="res://Woodplatform.png" id="1_i6nnl"]
-[ext_resource type="Script" uid="uid://d3whkk2nbb841" path="res://woodplatform.gd" id="1_kvcsn"]
+[ext_resource type="Script" uid="uid://d3whkk2nbb841" path="res://Scripts/woodplatform.gd" id="1_kvcsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6bqn"]
 size = Vector2(478.961, 120.216)
@@ -44,7 +44,7 @@ _data = {
 &"move": SubResource("Animation_i5nvr")
 }
 
-[node name="Path2D" type="Path2D"]
+[node name="WoodPlatform" type="Path2D"]
 script = ExtResource("1_kvcsn")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

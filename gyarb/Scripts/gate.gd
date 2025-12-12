@@ -7,7 +7,6 @@ signal DoorNotOpened
 var blue_pressed = false
 var red_pressed = false
 
-
 func _ready() -> void:
 	$AnimatedSprite2D.play("DoorNotOpened")
 
