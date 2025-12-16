@@ -30,6 +30,8 @@ size = Vector2(14, 4)
 size = Vector2(20, 5)
 
 [node name="Redbutton" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 259
 script = ExtResource("1_thya4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -3,11 +3,11 @@ class_name PlayerBig
 
 
 
-const MAX_SPEED = 300
+const MAX_SPEED = 250
 const ACC = 2500
-const JUMP_VELOCITY = 600
+const JUMP_VELOCITY = 625
 const GRAVITY = 1250
-const PUSH_FORCE = 100
+const PUSH_FORCE = 90
 const MAX_VELOCITY = 60
 
 enum{IDLE, WALK, AIR}

@@ -30,6 +30,8 @@ size = Vector2(14, 3)
 size = Vector2(20, 5)
 
 [node name="Bluebutton" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 261
 script = ExtResource("1_s1h02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
