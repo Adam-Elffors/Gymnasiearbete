@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bso7ibfxsipta"]
 
-[ext_resource type="Script" uid="uid://5wb7mdnswueh" path="res://Scripts/green_gate.gd" id="1_kb65x"]
-[ext_resource type="Texture2D" uid="uid://uuin0j37nvfe" path="res://Woodplatform.png" id="2_57ecw"]
+[ext_resource type="Script" uid="uid://5wb7mdnswueh" path="res://Scripts/green_gate.gd" id="1_u6524"]
+[ext_resource type="Texture2D" uid="uid://uuin0j37nvfe" path="res://Woodplatform.png" id="2_3elvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb65x"]
 size = Vector2(120, 30)
@@ -44,7 +44,7 @@ _data = {
 }
 
 [node name="GreenGate" type="Path2D"]
-script = ExtResource("1_kb65x")
+script = ExtResource("1_u6524")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-1, 98)
@@ -61,7 +61,7 @@ scale = Vector2(1, 1)
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_57ecw")
+texture = ExtResource("2_3elvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0, -2.28488e-06)
