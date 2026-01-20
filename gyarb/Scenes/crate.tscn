@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbaha6x2va1yi"]
 
-[ext_resource type="Script" uid="uid://donugp24n7cr8" path="res://Scenes/crate.gd" id="1_i4r3v"]
+[ext_resource type="Script" uid="uid://donugp24n7cr8" path="res://Scripts/crate.gd" id="1_i4r3v"]
 [ext_resource type="Texture2D" uid="uid://c5s8h287ycm0v" path="res://Crate.png" id="1_wp72f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp72f"]

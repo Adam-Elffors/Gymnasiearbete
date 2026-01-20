@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=4 uid="uid://ca2t8nvu8vvs7"]
+
+[ext_resource type="PackedScene" uid="uid://bgl6a8fiwn4hg" path="res://Scenes/level.tscn" id="1_wb8gp"]
+[ext_resource type="PackedScene" uid="uid://b5fy1wkvhory0" path="res://Scenes/pause_menu.tscn" id="2_hvaeu"]
+
+[node name="Level" instance=ExtResource("1_wb8gp")]
+position = Vector2(-1, -161)
+scale = Vector2(1.05, 1.05)
+
+[node name="Sprite2D" parent="BG" index="0"]
+position = Vector2(991, 556.5)
+scale = Vector2(1, 1.02685)
+
+[node name="TileMapLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD//wwAAAABAAIAAAAAAAwAAAADAAIAAAAAAAsAAAADAAIAAAD//wsAAAABAAIAAAD//woAAAABAAIAAAAAAAoAAAAHAAEAAAABAAoAAAADAAMAAAAAAAkAAAACAAIAAAAAAAgAAAACAAIAAAD//wgAAAABAAIAAAD//wkAAAABAAIAAAABAAkAAAADAAIAAAABAAgAAAADAAIAAAABAAcAAAAHAAEAAAAAAAcAAAACAAIAAAAAAAYAAAAIAAIAAAD//wYAAAABAAEAAAD//wcAAAABAAIAAAAAAAUAAAABAAIAAAABAAUAAAACAAIAAAACAAUAAAAHAAEAAAACAAYAAAADAAIAAAABAAYAAAACAAIAAAACAAcAAAADAAMAAAADAAUAAAADAAMAAAAFAAMAAAADAAMAAAD//w0AAAABAAMAAAAAAA0AAAADAAMAAAADAAQAAAADAAIAAAACAAQAAAACAAIAAAABAAQAAAACAAIAAAAAAAQAAAABAAIAAAAAAAMAAAABAAEAAAABAAMAAAAIAAIAAAABAAIAAAABAAEAAAACAAIAAAAIAAIAAAACAAEAAAABAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAADAAEAAAAFAAIAAAADAAIAAAAEAAIAAAACAAIAAAADAAIAAAACAAIAAAACAAMAAAACAAIAAAADAAMAAAAHAAEAAAAEAAMAAAACAAMAAAA=")
+
+[node name="PlayerBig" parent="." index="2"]
+position = Vector2(63.8095, 1143.81)
+
+[node name="PlayerSmall" parent="." index="3"]
+position = Vector2(114.286, 1152.38)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
+
+[node name="PauseMenu" parent="CanvasLayer" index="0" instance=ExtResource("2_hvaeu")]
+offset_left = -1.0
+offset_top = -161.0
+offset_right = -1.0
+offset_bottom = -161.0

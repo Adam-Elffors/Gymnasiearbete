@@ -5,9 +5,9 @@ class_name PlayerSmall
 
 const MAX_SPEED = 300
 const ACC = 2500
-const JUMP_VELOCITY = 650
+const JUMP_VELOCITY = 635
 const GRAVITY = 1250
-const PUSH_FORCE = 60
+const PUSH_FORCE = 0
 const MAX_VELOCITY = 60
 
 enum{IDLE, WALK, AIR}

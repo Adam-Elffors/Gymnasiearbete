@@ -29,7 +29,7 @@ size = Vector2(14, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7l1co"]
 size = Vector2(20, 5)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="GreenButton" type="StaticBody2D"]
 script = ExtResource("3_1tckb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -50,5 +50,6 @@ position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_7l1co")
 
 [connection signal="GreenButtonNotPressed" from="." to="." method="_on_green_button_not_pressed"]
+[connection signal="GreenButtonPressed" from="." to="." method="_on_green_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

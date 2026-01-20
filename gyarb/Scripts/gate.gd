@@ -28,3 +28,7 @@ func on_blue_button_unpressed():
 
 func on_red_button_unpressed():
 	red_pressed = false
+	
+
+func _on_body_entered(body: Node2D) -> void:
+	pass

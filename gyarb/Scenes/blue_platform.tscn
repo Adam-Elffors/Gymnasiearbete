@@ -10,7 +10,7 @@ collision_layer = 2048
 collision_mask = 261
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.00406917, 0.242814, 0.946927, 1)
+modulate = Color(0.110326, 0.356221, 0.999999, 1)
 texture = ExtResource("1_yumdr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
