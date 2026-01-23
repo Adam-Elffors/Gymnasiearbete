@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgl6a8fiwn4hg"]
+[gd_scene load_steps=13 format=3 uid="uid://bgl6a8fiwn4hg"]
 
 [ext_resource type="Script" uid="uid://cysbnmh7ypy0u" path="res://Scripts/level.gd" id="1_754fn"]
 [ext_resource type="Texture2D" uid="uid://46wm4y7thwit" path="res://The Dawn/Reference-Image.png" id="2_bvt00"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://hodjuti6h714" path="res://Scenes/redbutton.tscn" id="6_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://dk37fwosdfedk" path="res://Scenes/bluebutton.tscn" id="7_crh0w"]
 [ext_resource type="PackedScene" uid="uid://cq5eilf15dl7u" path="res://Scenes/gate.tscn" id="8_c7le1"]
+[ext_resource type="PackedScene" uid="uid://b5fy1wkvhory0" path="res://Scenes/pause_menu.tscn" id="9_bvt00"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("3_oqgf2")
@@ -795,3 +796,11 @@ scale = Vector2(2.5, 2.5)
 [node name="Gate" parent="." instance=ExtResource("8_c7le1")]
 position = Vector2(884, 561.6)
 scale = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_bvt00")]
+offset_left = -1.0
+offset_top = -206.0
+offset_right = -1.0
+offset_bottom = -206.0

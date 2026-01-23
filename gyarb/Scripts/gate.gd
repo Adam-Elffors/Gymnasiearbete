@@ -31,4 +31,7 @@ func on_red_button_unpressed():
 	
 
 func _on_body_entered(body: Node2D) -> void:
-	pass
+	if body is PlayerBig or body is PlayerSmall:
+		emit_signal("DoorOpening")
+		$AnimatedSprite2D.play("DoorOpening")
+		

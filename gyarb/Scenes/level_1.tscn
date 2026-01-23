@@ -16,3 +16,6 @@ position = Vector2(160.87, 427.826)
 
 [node name="Gate" parent="." index="6"]
 position = Vector2(1240, 406.957)
+
+[node name="PauseMenu" parent="CanvasLayer" index="0"]
+visible = false

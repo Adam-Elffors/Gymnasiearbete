@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://88ngs5skrbr"]
+
+[ext_resource type="Script" uid="uid://bbf7vbge578qb" path="res://Scripts/level_manager.gd" id="1_f6wcy"]
+
+[sub_resource type="Animation" id="Animation_f6wcy"]
+resource_name = "fade_in"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_83v1d"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q361b"]
+_data = {
+&"RESET": SubResource("Animation_83v1d"),
+&"fade_in": SubResource("Animation_f6wcy")
+}
+
+[node name="LevelManager" type="Node2D"]
+script = ExtResource("1_f6wcy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1609.0
+offset_bottom = 1122.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q361b")
+}
