@@ -29,7 +29,7 @@ size = Vector2(14, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7l1co"]
 size = Vector2(20, 5)
 
-[node name="GreenButton" type="StaticBody2D"]
+[node name="Greenbutton" type="StaticBody2D"]
 script = ExtResource("3_1tckb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

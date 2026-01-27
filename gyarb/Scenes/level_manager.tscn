@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bbf7vbge578qb" path="res://Scripts/level_manager.gd" id="1_f6wcy"]
 
+[sub_resource type="Animation" id="Animation_83v1d"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_f6wcy"]
 resource_name = "fade_in"
 length = 0.5
-
-[sub_resource type="Animation" id="Animation_83v1d"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q361b"]
 _data = {
