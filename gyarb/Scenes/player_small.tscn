@@ -91,7 +91,7 @@ height = 16.0
 
 [node name="PlayerSmall" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 2387
+collision_mask = 6483
 script = ExtResource("1_wt7se")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -105,3 +105,7 @@ shape = SubResource("CapsuleShape2D_twc7x")
 [node name="BoxRay" type="RayCast2D" parent="."]
 target_position = Vector2(0, 15)
 collision_mask = 256
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

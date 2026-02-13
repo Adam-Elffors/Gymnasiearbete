@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bso7ibfxsipta"]
 
 [ext_resource type="Script" uid="uid://5wb7mdnswueh" path="res://Scripts/green_gate.gd" id="1_u6524"]
-[ext_resource type="Texture2D" uid="uid://uuin0j37nvfe" path="res://Woodplatform.png" id="2_3elvx"]
+[ext_resource type="Texture2D" uid="uid://pkjptkg014gm" path="res://Woodtile.png" id="2_u6524"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb65x"]
 size = Vector2(120, 30)
@@ -56,13 +56,14 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(0, 300)
 rotation = -1.58898
-scale = Vector2(1, 1)
+collision_layer = 4096
+collision_mask = 799
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 modulate = Color(0, 1, 1, 1)
 rotation = 0.0174533
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_3elvx")
+texture = ExtResource("2_u6524")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0, -2.28488e-06)

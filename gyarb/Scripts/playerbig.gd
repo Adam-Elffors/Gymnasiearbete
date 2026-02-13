@@ -7,7 +7,7 @@ const MAX_SPEED = 250
 const ACC = 2500
 const JUMP_VELOCITY = 615
 const GRAVITY = 1250
-const PUSH_FORCE = 50
+const PUSH_FORCE = 40
 const MAX_VELOCITY = 60
 
 enum{IDLE, WALK, AIR}
@@ -145,3 +145,8 @@ func _enter_air_state(jumping: bool):
 	jump_buffer = 0.0
 	if jumping:
 		velocity += up_direction*JUMP_VELOCITY
+
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	LevelManager.restart_current_level()

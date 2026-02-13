@@ -17,6 +17,19 @@ func _ready() -> void:
 	if has_node("Greenbutton"):
 		$Greenbutton.connect("GreenButtonPressed", $GreenGate.on_green_button_pressed)
 		$Greenbutton.connect("GreenButtonNotPressed", $GreenGate.on_green_button_unpressed)
+	
+	if has_node("Greenbutton2"):
+		$Greenbutton2.connect("GreenButtonPressed", $GreenGate2.on_green_button_pressed)
+		$Greenbutton2.connect("GreenButtonNotPressed", $GreenGate2.on_green_button_unpressed)
+	
+	if has_node("Greenbutton3"):
+		$Greenbutton3.connect("GreenButtonPressed", $GreenGate3.on_green_button_pressed)
+		$Greenbutton3.connect("GreenButtonNotPressed", $GreenGate3.on_green_button_unpressed)
+	
+	if has_node("Greenbutton3"):
+		$Greenbutton4.connect("GreenButtonPressed", $GreenGate3.on_green_button_pressed)
+		$Greenbutton4.connect("GreenButtonNotPressed", $GreenGate3.on_green_button_unpressed)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name PlayerSmall
 
-
+signal dead
 
 const MAX_SPEED = 300
 const ACC = 2500
@@ -10,11 +10,12 @@ const GRAVITY = 1250
 const PUSH_FORCE = 0
 const MAX_VELOCITY = 60
 
-enum{IDLE, WALK, AIR}
+enum{IDLE, WALK, AIR, DEAD}
 
 var state = IDLE
 var want_to_jump: bool = false
 var jump_buffer: float = 0.0
+var is_dead: bool = false
 
 
 
@@ -30,6 +31,8 @@ func _physics_process(delta: float) -> void:
 			_walk_state(delta)
 		AIR:
 			_air_state(delta)
+		DEAD:
+			_dead_state(delta)
 	
 	
 
@@ -127,7 +130,8 @@ func _air_state(delta: float) -> void:
 	elif is_on_floor():
 		_enter_walk_state()
 		
-
+func _dead_state(delta: float) -> void:
+	_movement(delta, 0)
 
 
 ############### ENTER STATE FUNCTION #######################
@@ -146,3 +150,7 @@ func _enter_air_state(jumping: bool):
 	jump_buffer = 0.0
 	if jumping:
 		velocity += up_direction*JUMP_VELOCITY
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	LevelManager.restart_current_level()

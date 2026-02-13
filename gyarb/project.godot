@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*res://Scripts/level_manager.gd"
+LevelManager="*res://Scenes/level_manager.tscn"
 
 [display]
 
@@ -76,6 +76,7 @@ pause={
 2d_physics/layer_10="GreenButton"
 2d_physics/layer_11="RedPlatform"
 2d_physics/layer_12="BluePlatform"
+2d_physics/layer_13="GreenGate"
 
 [rendering]
 
