@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 	pass
 
 
+
 func _on_gate_passed():
 	level_completed = true
 	LevelManager.change_to_next_level(level)

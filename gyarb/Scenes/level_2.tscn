@@ -29,6 +29,3 @@ position = Vector2(86.9565, 239.13)
 [node name="RedPlatform" parent="." index="7" instance=ExtResource("2_smnlx")]
 position = Vector2(397.391, 486.087)
 scale = Vector2(0.25, 0.25)
-
-[node name="PauseMenu" parent="CanvasLayer" index="0"]
-visible = false

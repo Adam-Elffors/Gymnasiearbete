@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckywpu2k2qw1y"]
 
-[ext_resource type="Texture2D" uid="uid://uuin0j37nvfe" path="res://Woodplatform.png" id="1_i6nnl"]
 [ext_resource type="Script" uid="uid://d3whkk2nbb841" path="res://Scripts/woodplatform.gd" id="1_kvcsn"]
+[ext_resource type="Texture2D" uid="uid://pkjptkg014gm" path="res://Woodtile.png" id="2_aaynn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6bqn"]
-size = Vector2(478.961, 120.216)
+size = Vector2(482.017, 120.216)
 
 [sub_resource type="Animation" id="Animation_vw0xd"]
 length = 0.001
@@ -57,14 +57,13 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(796, -7)
 rotation = 3.1328
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(1.99115, 1.01755)
-texture = ExtResource("1_i6nnl")
+texture = ExtResource("2_aaynn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(1.99992, 0.0175881)
+position = Vector2(1.99109, 1.02634)
 shape = SubResource("RectangleShape2D_l6bqn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

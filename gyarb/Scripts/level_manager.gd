@@ -1,10 +1,11 @@
 extends Node2D
 
 
-const LAST_LEVEL = 6
+const LAST_LEVEL = 9
 const LEVEL_PATH = "res://Scenes/level_"
 	
 @onready var anim: AnimationPlayer = $AnimationPlayer
+
 
 
 func change_to_next_level(current_level:int) -> void:

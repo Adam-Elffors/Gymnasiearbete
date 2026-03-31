@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c5s8h287ycm0v" path="res://Crate.png" id="1_wp72f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp72f"]
-size = Vector2(475, 475)
+size = Vector2(500, 500)
 
 [node name="Crate" type="RigidBody2D" groups=["Crates"]]
 collision_layer = 256

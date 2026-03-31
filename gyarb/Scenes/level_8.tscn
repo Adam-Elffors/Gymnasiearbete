@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=4 uid="uid://bp0t25fgdp3re"]
+
+[ext_resource type="PackedScene" uid="uid://bgl6a8fiwn4hg" path="res://Scenes/level.tscn" id="1_rsuea"]
+[ext_resource type="PackedScene" uid="uid://ckywpu2k2qw1y" path="res://Scenes/Woodplatform.tscn" id="2_w8c7v"]
+[ext_resource type="PackedScene" uid="uid://dbaha6x2va1yi" path="res://Scenes/crate.tscn" id="3_eowa8"]
+[ext_resource type="PackedScene" uid="uid://bso7ibfxsipta" path="res://Scenes/green_gate.tscn" id="4_u4qav"]
+[ext_resource type="PackedScene" uid="uid://dqrrmbcm3q7p2" path="res://Scenes/green_button.tscn" id="5_cy2qo"]
+[ext_resource type="PackedScene" uid="uid://c7l8jiyyu1jog" path="res://Scenes/red_platform.tscn" id="6_cy2qo"]
+[ext_resource type="PackedScene" uid="uid://bl812xyhivk3f" path="res://Scenes/blue_platform.tscn" id="7_vaeam"]
+
+[sub_resource type="Curve2D" id="Curve2D_u4qav"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 820.343, 10.7236, 0, 0, 0, 0, 168.341, 15.593)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_cy2qo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 848.826, -3.75586, 0, 0, 0, 0, -176.526, -11.2676)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vaeam"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1257.79, -58.8351, 0, 0, 0, 0, 874.25, -6.2431)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_a0bmv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 959.223, -15.5337, 0, 0, 0, 0, -349.515, -7.7666)
+}
+point_count = 2
+
+[node name="Level" instance=ExtResource("1_rsuea")]
+position = Vector2(-1, -170)
+scale = Vector2(1.03, 1.03)
+level = 8
+
+[node name="Sprite2D" parent="BG" index="0"]
+position = Vector2(991, 580)
+scale = Vector2(1, 1.07037)
+
+[node name="TileMapLayer" parent="." index="1"]
+position = Vector2(106.103, 110.798)
+tile_map_data = PackedByteArray("AAD//w0AAAABAAMAAAAAAA0AAAACAAMAAAABAA0AAAACAAMAAAACAA0AAAADAAMAAAACAAwAAAAHAAEAAAABAAwAAAACAAIAAAAAAAwAAAACAAIAAAD//wwAAAABAAIAAAD//wsAAAABAAEAAAAAAAsAAAAIAAIAAAABAAsAAAACAAIAAAABAAoAAAACAAIAAAACAAsAAAACAAIAAAADAAsAAAAHAAEAAAADAAoAAAACAAIAAAAEAAoAAAACAAIAAAAEAAsAAAACAAMAAAADAAwAAAADAAMAAAAAAAoAAAABAAIAAAACAAoAAAACAAIAAAACAAkAAAAIAAIAAAABAAkAAAACAAEAAAADAAkAAAACAAIAAAAEAAkAAAACAAIAAAAFAAkAAAACAAIAAAAFAAgAAAACAAIAAAAGAAgAAAACAAIAAAAEAAgAAAACAAIAAAADAAgAAAAIAAIAAAAGAAkAAAAHAAEAAAAEAAcAAAACAAEAAAAFAAcAAAACAAEAAAAGAAcAAAACAAEAAAACAAgAAAABAAEAAAADAAcAAAABAAEAAAAAAAkAAAABAAEAAAAFAAsAAAACAAMAAAAFAAoAAAACAAIAAAAGAAoAAAADAAIAAAAGAAsAAAADAAMAAAAHAAkAAAACAAMAAAAHAAcAAAACAAEAAAAHAAgAAAACAAIAAAAIAAgAAAACAAIAAAAIAAkAAAAIAAEAAAAJAAkAAAACAAIAAAAIAAcAAAACAAEAAAAJAAgAAAAHAAIAAAAJAAoAAAACAAIAAAAIAAoAAAABAAIAAAAKAAoAAAADAAIAAAAKAAkAAAADAAIAAAAJAAsAAAACAAIAAAAMAA0AAAACAAMAAAANAA0AAAACAAMAAAAOAA0AAAACAAMAAAAPAA0AAAACAAMAAAAQAA0AAAADAAMAAAAQAAwAAAADAAIAAAAIAAsAAAACAAIAAAAKAAsAAAADAAIAAAAQAAsAAAADAAIAAAAQAAYAAAADAAIAAAAQAAcAAAADAAIAAAAQAAgAAAADAAIAAAAQAAkAAAADAAIAAAAQAAoAAAADAAIAAAALAA0AAAACAAMAAAAHAA0AAAACAAMAAAAKAAgAAAAHAAQAAAAJAAcAAAADAAEAAAAMAAkAAAAFAAUAAAAHAAQAAAAFAAEAAAAFAAQAAAAFAAUAAAADAAQAAAAFAAUAAAABAAQAAAAFAAUAAAD//wQAAAAFAAUAAAALAAUAAAAQAAUAAAALAAQAAAAQAAQAAAALAAMAAAAQAAUAAAALAAIAAAAQAAQAAAALAAEAAAACAAUAAAAMAAEAAAACAAUAAAANAAEAAAACAAUAAAAOAAEAAAACAAUAAAAPAAEAAAACAAUAAAAQAAEAAAARAAQAAAAQAAIAAAARAAUAAAAPAAIAAAACAAUAAAAOAAIAAAACAAUAAAANAAIAAAACAAUAAAAMAAIAAAACAAUAAAAMAAMAAAACAAUAAAAMAAQAAAACAAUAAAAMAAUAAAACAAUAAAANAAUAAAACAAUAAAAOAAUAAAACAAUAAAAPAAUAAAACAAUAAAAQAAUAAAADAAEAAAAQAAQAAAARAAUAAAAQAAMAAAARAAQAAAANAAMAAAACAAUAAAANAAQAAAACAAUAAAAOAAQAAAACAAUAAAAPAAQAAAACAAUAAAAPAAMAAAACAAUAAAAOAAMAAAACAAUAAAALAAgAAAADAAUAAAAKAAQAAAADAAMAAAAIAAUAAAADAAUAAAAHAAUAAAAQAAUAAAA=")
+
+[node name="PlayerBig" parent="." index="2"]
+position = Vector2(796.117, 468.932)
+
+[node name="PlayerSmall" parent="." index="3"]
+position = Vector2(1329.13, 550.485)
+
+[node name="Redbutton" parent="." index="4"]
+position = Vector2(703.884, 936.893)
+rotation = 3.14159
+
+[node name="Bluebutton" parent="." index="5"]
+position = Vector2(716.505, 1183.5)
+
+[node name="Gate" parent="." index="6"]
+position = Vector2(61.1651, 385.437)
+scale = Vector2(1.3, 1.3)
+
+[node name="PauseMenu" parent="CanvasLayer" index="0"]
+visible = false
+
+[node name="WoodPlatform" parent="." index="8" instance=ExtResource("2_w8c7v")]
+position = Vector2(631.068, 899.029)
+rotation = 1.57429
+scale = Vector2(0.3, 0.3)
+curve = SubResource("Curve2D_u4qav")
+
+[node name="Crate" parent="." index="9" instance=ExtResource("3_eowa8")]
+position = Vector2(451.456, 1023.3)
+
+[node name="GreenGate2" parent="." index="10" instance=ExtResource("4_u4qav")]
+position = Vector2(1297.09, 1096.12)
+rotation = 3.14159
+
+[node name="GreenGate" parent="." index="11" instance=ExtResource("4_u4qav")]
+position = Vector2(621.359, 871.845)
+rotation = 1.5708
+
+[node name="Greenbutton" parent="." index="12" instance=ExtResource("5_cy2qo")]
+position = Vector2(85.446, 1183.1)
+scale = Vector2(2.5, 2.5)
+
+[node name="WoodPlatform2" parent="." index="13" instance=ExtResource("2_w8c7v")]
+position = Vector2(1017.48, 1186.41)
+rotation = 3.14159
+scale = Vector2(0.25, 0.25)
+curve = SubResource("Curve2D_cy2qo")
+speed_scale = 0.25
+
+[node name="Greenbutton2" parent="." index="14" instance=ExtResource("5_cy2qo")]
+position = Vector2(1418.45, 1182.52)
+rotation = 4.71239
+scale = Vector2(2.5, 2.5)
+
+[node name="WoodPlatform3" parent="." index="15" instance=ExtResource("2_w8c7v")]
+position = Vector2(553.398, 420.388)
+rotation = -0.0261799
+scale = Vector2(0.3, 0.3)
+curve = SubResource("Curve2D_vaeam")
+speed = 2.5
+speed_scale = 1.4
+
+[node name="GreenGate3" parent="." index="16" instance=ExtResource("4_u4qav")]
+position = Vector2(628.155, 285)
+scale = Vector2(0.6, 0.6)
+
+[node name="GreenGate4" parent="." index="17" instance=ExtResource("4_u4qav")]
+position = Vector2(470.874, 285)
+scale = Vector2(0.6, 0.6)
+
+[node name="GreenGate5" parent="." index="18" instance=ExtResource("4_u4qav")]
+position = Vector2(305.825, 285)
+scale = Vector2(0.6, 0.6)
+
+[node name="GreenGate6" parent="." index="19" instance=ExtResource("4_u4qav")]
+position = Vector2(145.631, 285)
+scale = Vector2(0.6, 0.6)
+
+[node name="RedPlatform" parent="." index="21" instance=ExtResource("6_cy2qo")]
+position = Vector2(1369.9, 746.602)
+scale = Vector2(0.25, 0.25)
+
+[node name="BluePlatform" parent="." index="22" instance=ExtResource("7_vaeam")]
+position = Vector2(951.456, 636.893)
+rotation = -0.785398
+scale = Vector2(0.25, 0.25)
+
+[node name="WoodPlatform4" parent="." index="23" instance=ExtResource("2_w8c7v")]
+position = Vector2(1212.62, 291.262)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+curve = SubResource("Curve2D_a0bmv")
+speed_scale = 2.0
+
+[node name="Crate2" parent="." index="24" instance=ExtResource("3_eowa8")]
+position = Vector2(470.874, 651.456)

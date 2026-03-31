@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu06lg4qkw661"]
+
+[ext_resource type="AudioStream" uid="uid://csp6rbi884dab" path="res://Scenes/dungeon002.ogg" id="1_ldat0"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ldat0")
+autoplay = true

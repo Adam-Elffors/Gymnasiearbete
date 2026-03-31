@@ -11,10 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/instructions_menu.tscn")
 
-
-
-func _on_exit_pressed() -> void:
-	get_tree().quit()
+func _on_continue_pressed() -> void:
+	LevelManager.change_to_next_level(0)

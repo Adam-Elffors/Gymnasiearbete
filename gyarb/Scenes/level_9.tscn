@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=4 uid="uid://ckgjhdlb4u5iu"]
+
+[ext_resource type="PackedScene" uid="uid://bgl6a8fiwn4hg" path="res://Scenes/level.tscn" id="1_6ur6o"]
+[ext_resource type="PackedScene" uid="uid://ckywpu2k2qw1y" path="res://Scenes/Woodplatform.tscn" id="2_fdw5x"]
+[ext_resource type="PackedScene" uid="uid://bl812xyhivk3f" path="res://Scenes/blue_platform.tscn" id="3_xdxvx"]
+[ext_resource type="PackedScene" uid="uid://c7l8jiyyu1jog" path="res://Scenes/red_platform.tscn" id="4_tj4sd"]
+[ext_resource type="PackedScene" uid="uid://dbaha6x2va1yi" path="res://Scenes/crate.tscn" id="5_tj4sd"]
+[ext_resource type="PackedScene" uid="uid://bso7ibfxsipta" path="res://Scenes/green_gate.tscn" id="6_rybd0"]
+[ext_resource type="PackedScene" uid="uid://dqrrmbcm3q7p2" path="res://Scenes/green_button.tscn" id="7_qv3nj"]
+
+[sub_resource type="Curve2D" id="Curve2D_2yhr7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 804.466, -2.29575, 0, 0, 0, 0, 1745.77, 1.19833)
+}
+point_count = 2
+
+[node name="Level" instance=ExtResource("1_6ur6o")]
+position = Vector2(-10, -207)
+scale = Vector2(1.06, 1.06)
+level = 9
+
+[node name="TileMapLayer" parent="." index="1"]
+position = Vector2(28.3019, 83.9623)
+scale = Vector2(2.2, 2.2)
+tile_map_data = PackedByteArray("AAD//wIAAAACAAEAAAAAAAIAAAACAAEAAAABAAIAAAACAAEAAAACAAIAAAACAAEAAAADAAIAAAACAAEAAAAEAAIAAAACAAEAAAAFAAIAAAACAAEAAAAGAAIAAAACAAEAAAAHAAIAAAACAAEAAAAIAAIAAAACAAEAAAAJAAIAAAACAAEAAAANAAIAAAACAAEAAAAOAAIAAAACAAEAAAAPAAIAAAACAAEAAAAQAAIAAAACAAEAAAAKAAIAAAACAAEAAAALAAIAAAACAAEAAAAMAAIAAAACAAEAAAATAAIAAAADAAEAAAASAAIAAAACAAEAAAARAAIAAAACAAEAAAD//wwAAAACAAMAAAAAAAwAAAADAAMAAAABAAwAAAABAAMAAAACAAwAAAACAAMAAAADAAwAAAALAAQAAAACAAsAAAAIAAIAAAADAAsAAAADAAIAAAADAAoAAAALAAUAAAABAAsAAAABAAEAAAACAAoAAAABAAEAAAADAAkAAAAFAAEAAAAGAAkAAAAFAAUAAAAHAAoAAAABAAUAAAAIAAoAAAACAAUAAAAJAAoAAAADAAUAAAADAAYAAAAKAAQAAAABAAUAAAAKAAQAAAAEAAMAAAACAAMAAAAFAAMAAAACAAMAAAAGAAMAAAACAAMAAAAHAAMAAAACAAMAAAAIAAMAAAACAAMAAAAJAAMAAAACAAMAAAAKAAMAAAACAAMAAAALAAMAAAACAAMAAAAMAAMAAAACAAMAAAANAAMAAAACAAMAAAAOAAMAAAAHAAEAAAARAAMAAAAKAAIAAAASAAMAAAACAAMAAAATAAMAAAADAAMAAAANAA4AAAACAAMAAAAOAA4AAAACAAMAAAAPAA4AAAACAAMAAAADAAMAAAACAAMAAAAPAAMAAAACAAMAAAAIAA0AAAAFAAUAAAAKAAwAAAAFAAUAAAAQAAMAAAACAAMAAAARAAUAAAADAAIAAAARAAQAAAADAAIAAAATAAkAAAAFAAUAAAAUAAgAAAAFAAUAAAATAAYAAAACAAMAAAASAAUAAAABAAUAAAA=")
+
+[node name="PlayerBig" parent="." index="2"]
+position = Vector2(822.642, 297.17)
+
+[node name="PlayerSmall" parent="." index="3"]
+position = Vector2(47.1698, 867.925)
+
+[node name="Redbutton" parent="." index="4"]
+position = Vector2(1051.89, 1094.34)
+
+[node name="Bluebutton" parent="." index="5"]
+position = Vector2(274.528, 761.321)
+rotation = 3.14159
+
+[node name="Gate" parent="." index="6"]
+position = Vector2(1363.21, 437.736)
+
+[node name="PauseMenu" parent="CanvasLayer" index="0"]
+visible = false
+
+[node name="WoodPlatform" parent="." index="8" instance=ExtResource("2_fdw5x")]
+position = Vector2(-916.038, 638.679)
+scale = Vector2(1.35, 1.35)
+curve = SubResource("Curve2D_2yhr7")
+speed_scale = 1.18
+
+[node name="BluePlatform" parent="." index="9" instance=ExtResource("3_xdxvx")]
+position = Vector2(433.019, 1092.45)
+scale = Vector2(0.2, 0.2)
+
+[node name="RedPlatform" parent="." index="10" instance=ExtResource("4_tj4sd")]
+position = Vector2(393.396, 638.679)
+scale = Vector2(0.2, 0.2)
+
+[node name="Crate" parent="." index="12" instance=ExtResource("5_tj4sd")]
+position = Vector2(624.528, 327.359)
+
+[node name="GreenGate" parent="." index="13" instance=ExtResource("6_rybd0")]
+position = Vector2(273.585, 1092.45)
+rotation = 3.14159
+
+[node name="GreenGate2" parent="." index="14" instance=ExtResource("6_rybd0")]
+position = Vector2(943.396, 970.755)
+rotation = 5.84685
+
+[node name="Greenbutton" parent="." index="15" instance=ExtResource("7_qv3nj")]
+position = Vector2(1388.68, 316.981)
+rotation = 4.71239
+scale = Vector2(2.5, 2.5)
+
+[node name="BluePlatform2" parent="." index="16" instance=ExtResource("3_xdxvx")]
+position = Vector2(336.792, 1092.45)
+scale = Vector2(0.2, 0.2)
+
+[node name="GreenGate3" parent="." index="17" instance=ExtResource("6_rybd0")]
+position = Vector2(1163.21, 970.755)
+rotation = 0.436332
+
+[node name="BluePlatform3" parent="." index="18" instance=ExtResource("3_xdxvx")]
+position = Vector2(1285.85, 874.528)
+scale = Vector2(0.2, 0.2)

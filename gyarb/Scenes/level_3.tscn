@@ -43,7 +43,7 @@ position = Vector2(721.739, 309.565)
 scale = Vector2(0.25, 0.25)
 
 [node name="BluePlatform2" parent="." index="10" instance=ExtResource("2_g5cw1")]
-position = Vector2(351.304, 512.174)
+position = Vector2(353.704, 475)
 scale = Vector2(0.25, 0.25)
 
 [node name="BluePlatform3" parent="." index="11" instance=ExtResource("2_g5cw1")]
@@ -61,7 +61,7 @@ position = Vector2(861.739, 680)
 scale = Vector2(0.25, 0.25)
 
 [node name="RedPlatform5" parent="." index="14" instance=ExtResource("3_76ybr")]
-position = Vector2(325, 576.852)
+position = Vector2(350.926, 607.407)
 scale = Vector2(0.25, 0.25)
 
 [node name="PauseMenu" parent="CanvasLayer" index="0"]

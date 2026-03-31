@@ -32,9 +32,11 @@ position = Vector2(672.816, 961.165)
 
 [node name="Crate" parent="." index="7" instance=ExtResource("2_5eaas")]
 position = Vector2(936.522, 271.304)
+collision_mask = 7455
 
 [node name="Crate2" parent="." index="8" instance=ExtResource("2_5eaas")]
 position = Vector2(770.874, 354.369)
+collision_mask = 7455
 
 [node name="GreenGate" parent="." index="9" instance=ExtResource("2_kdkq3")]
 position = Vector2(844.348, 528.696)
@@ -43,3 +45,6 @@ curve = SubResource("Curve2D_f6i20")
 [node name="RedPlatform" parent="." index="10" instance=ExtResource("4_wi344")]
 position = Vector2(1346.6, 1015.53)
 scale = Vector2(0.3, 0.3)
+
+[node name="AudioStreamPlayer" parent="." index="12"]
+volume_db = -5.0

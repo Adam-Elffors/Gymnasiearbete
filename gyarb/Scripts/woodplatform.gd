@@ -9,11 +9,15 @@ extends Path2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not loop:
-		animation.play("move")
 		animation.speed_scale = speed_scale
+		animation.play("move")
 		set_process(false)
+	if loop:
+		animation.speed_scale = speed_scale
+		animation.play_backwards("move")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	path.progress += speed
+	#path.progress += speed
+	pass

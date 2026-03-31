@@ -3,7 +3,7 @@ class_name PlayerSmall
 
 signal dead
 
-const MAX_SPEED = 300
+const MAX_SPEED = 310
 const ACC = 2500
 const JUMP_VELOCITY = 650
 const GRAVITY = 1250

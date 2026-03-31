@@ -7,6 +7,8 @@ signal DoorNotOpened
 var blue_pressed = false
 var red_pressed = false
 var gate_opened = false
+var big_player_entered = false
+var small_player_entered = false
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("DoorNotOpened")
@@ -35,7 +37,12 @@ func on_red_button_unpressed():
 
 func _on_body_entered(body: Node2D) -> void:
 	if gate_opened == true:
-		if body is PlayerBig or body is PlayerSmall:
+		if body is PlayerBig:
+			big_player_entered = true
+		elif body is PlayerSmall:
+			small_player_entered = true
+		
+		if small_player_entered and big_player_entered:
 			emit_signal("DoorOpening")
 			$AnimatedSprite2D.play("DoorOpening")
 		
