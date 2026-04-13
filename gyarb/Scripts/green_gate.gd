@@ -15,18 +15,15 @@ func _ready() -> void:
 	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#path.progress += speed
-	pass
 
+# Spelar animationen för den gröna väggen att röra på sig
 func on_green_button_pressed():
 	green_pressed = true
 	if green_pressed:
 		$AnimationPlayer.play("move")
 	
 
-
+#Spelar animationen baklänges. Om knappen inte längre är nedtryckt så åker väggen tillbaka
 func on_green_button_unpressed():
 	green_pressed = false
 	$AnimationPlayer.play_backwards("move")

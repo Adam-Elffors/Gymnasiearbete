@@ -1,15 +1,7 @@
 extends Node2D
 
-@onready var gate: Area2D = $Gate
-#Variabel som startar på level 1
-@export var level = 1
-
-var level_completed: bool = false
-
-
-#Kod för att alla knapparna ska bli tryckta och upptrycka med animationer.
+#Gör bara så att de gröna knapparna och väggarna fungerar med sina animationer då detta inte är en traditionel level.
 func _ready() -> void:
-	gate.connect("DoorOpening",_on_gate_passed)
 	$Bluebutton.connect("BlueButtonPressed", $Gate.on_blue_button_pressed)
 	$Redbutton.connect("RedButtonPressed", $Gate.on_red_button_pressed)
 	$Bluebutton.connect("BlueButtonNotPressed", $Gate.on_blue_button_unpressed)
@@ -36,8 +28,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-#Kollar så att ifall båda spelarna kolliderar med gaten, så kommer dem vidare till nästa bana
-func _on_gate_passed():
-	level_completed = true
-	LevelManager.change_to_next_level(level)
+
 	
+
+#Kan trycka på main menu ifall man vill spela igen
+func _on_quit_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

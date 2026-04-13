@@ -4,15 +4,12 @@ class_name BlueButton
 signal BlueButtonPressed
 signal BlueButtonNotPressed
 
-
+#Knapp ej påslagen i början
 func _ready() -> void:
 	$AnimatedSprite2D.play("BlueButtonNotPressed")
 	
 
-
-func _physics_process(delta: float) -> void:
-	pass
-
+#Om den lilla gubben går på knappen så trycks den ner
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is PlayerSmall:
 		emit_signal("BlueButtonPressed")
@@ -25,7 +22,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 		
 
-
+#Och här trycks den upp igen
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is PlayerSmall:
 		emit_signal("BlueButtonNotPressed")

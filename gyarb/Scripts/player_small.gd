@@ -1,3 +1,7 @@
+
+#I player_small, red button och red portal så skriver jag inget då det är exakt samma kod som deras counterparts.
+
+
 extends CharacterBody2D
 class_name PlayerSmall
 

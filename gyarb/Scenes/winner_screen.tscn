@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=4 uid="uid://c81267e1kbtwy"]
+
+[ext_resource type="PackedScene" uid="uid://bgl6a8fiwn4hg" path="res://Scenes/level.tscn" id="1_whwiw"]
+[ext_resource type="PackedScene" uid="uid://ckywpu2k2qw1y" path="res://Scenes/Woodplatform.tscn" id="2_30022"]
+[ext_resource type="Script" uid="uid://o73egjniabpf" path="res://Scenes/winner_screen.gd" id="2_emq8g"]
+[ext_resource type="PackedScene" uid="uid://bso7ibfxsipta" path="res://Scenes/green_gate.tscn" id="3_vclxf"]
+[ext_resource type="PackedScene" uid="uid://dqrrmbcm3q7p2" path="res://Scenes/green_button.tscn" id="4_emq8g"]
+[ext_resource type="PackedScene" uid="uid://dbaha6x2va1yi" path="res://Scenes/crate.tscn" id="5_5165x"]
+
+[sub_resource type="Curve2D" id="Curve2D_30022"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1034.78, -8.69531, 0, 0, 0, 0, -426.087, -8.69531)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_ncrrp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1039.13, -8.69531, 0, 0, 0, 0, -426.087, -8.69531)
+}
+point_count = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emq8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5165x"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="WinnerScreen" instance=ExtResource("1_whwiw")]
+script = ExtResource("2_emq8g")
+
+[node name="TileMapLayer" parent="." index="1"]
+position = Vector2(82.6087, 74.7826)
+tile_map_data = PackedByteArray("AAACAAkAAAABAAIAAAACAAoAAAABAAIAAAADAAoAAAACAAIAAAAEAAoAAAACAAIAAAAFAAsAAAACAAMAAAAGAAsAAAACAAMAAAAHAAsAAAACAAMAAAAIAAsAAAACAAMAAAAJAAsAAAACAAMAAAAKAAsAAAADAAMAAAAKAAoAAAADAAIAAAAJAAoAAAACAAIAAAAIAAoAAAACAAIAAAAHAAoAAAACAAIAAAAGAAoAAAACAAIAAAAFAAoAAAACAAIAAAADAAsAAAACAAMAAAACAAsAAAABAAMAAAAEAAsAAAACAAMAAAAEAAkAAAACAAIAAAADAAkAAAACAAIAAAADAAgAAAAIAAIAAAAFAAkAAAACAAIAAAAGAAkAAAACAAIAAAAHAAkAAAACAAIAAAAIAAkAAAACAAIAAAAJAAkAAAACAAIAAAAKAAkAAAADAAIAAAAKAAgAAAADAAEAAAAJAAgAAAAHAAIAAAAIAAgAAAACAAIAAAAHAAgAAAACAAIAAAAGAAgAAAACAAIAAAAFAAgAAAACAAIAAAAEAAgAAAACAAIAAAACAAgAAAABAAEAAAADAAcAAAABAAIAAAAEAAcAAAACAAIAAAAFAAcAAAACAAIAAAAGAAcAAAACAAIAAAAHAAcAAAACAAIAAAAIAAcAAAACAAIAAAAJAAcAAAADAAIAAAAJAAYAAAADAAEAAAAIAAYAAAAHAAIAAAAHAAYAAAACAAIAAAAGAAYAAAACAAIAAAAFAAYAAAACAAIAAAAEAAYAAAAIAAIAAAAEAAUAAAABAAEAAAAFAAUAAAAIAAIAAAAGAAUAAAACAAIAAAAHAAUAAAAHAAIAAAAIAAUAAAADAAEAAAAFAAQAAAABAAIAAAAGAAQAAAACAAIAAAAHAAQAAAADAAIAAAADAAYAAAABAAEAAAA=")
+
+[node name="PlayerBig" parent="." index="2"]
+position = Vector2(546.087, 450.435)
+
+[node name="PlayerSmall" parent="." index="3"]
+position = Vector2(658.261, 459.13)
+
+[node name="Redbutton" parent="." index="4"]
+position = Vector2(473.043, 96.5218)
+
+[node name="Bluebutton" parent="." index="5"]
+position = Vector2(770.435, 98.2608)
+
+[node name="Gate" parent="." index="6"]
+position = Vector2(606.087, -296.522)
+
+[node name="PauseMenu" parent="CanvasLayer" index="0"]
+visible = false
+
+[node name="Label" type="Label" parent="." index="9"]
+offset_left = 525.217
+offset_top = 233.043
+offset_right = 599.217
+offset_bottom = 288.043
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Win"
+
+[node name="Label2" type="Label" parent="." index="10"]
+offset_left = 600.0
+offset_top = 233.043
+offset_right = 666.0
+offset_bottom = 288.043
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "ner"
+
+[node name="WoodPlatform" parent="." index="11" instance=ExtResource("2_30022")]
+position = Vector2(544.348, 356.522)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+curve = SubResource("Curve2D_30022")
+loop = false
+speed_scale = 0.6
+
+[node name="WoodPlatform2" parent="." index="12" instance=ExtResource("2_30022")]
+position = Vector2(654.783, 356.5)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+curve = SubResource("Curve2D_ncrrp")
+loop = false
+speed_scale = 0.6
+
+[node name="Crate" parent="." index="13" instance=ExtResource("5_5165x")]
+position = Vector2(296.522, 767.826)
+
+[node name="Crate2" parent="." index="14" instance=ExtResource("5_5165x")]
+position = Vector2(894.783, 761.739)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="15"]
+offset_left = 469.565
+offset_top = 844.348
+offset_right = 741.565
+offset_bottom = 921.348
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Quit" type="Button" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.603922, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.603922, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.603922, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_emq8g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5165x")
+text = "Main Menu"
+
+[node name="GreenGate" parent="." index="16" instance=ExtResource("3_vclxf")]
+position = Vector2(490, 380)
+rotation = 1.5708
+
+[node name="GreenGate2" parent="." index="17" instance=ExtResource("3_vclxf")]
+position = Vector2(710, 380)
+rotation = 4.71239
+
+[node name="Greenbutton" parent="." index="18" instance=ExtResource("4_emq8g")]
+position = Vector2(300, 987.826)
+scale = Vector2(2.5, 2.5)
+
+[node name="Greenbutton2" parent="." index="19" instance=ExtResource("4_emq8g")]
+position = Vector2(903.478, 988.696)
+scale = Vector2(2.5, 2.5)
+
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

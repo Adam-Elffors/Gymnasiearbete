@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name PlayerBig
 
 
-
+#alla olika egenskaper hos den stora spelaren: speed, hopp, hastighet att knuffa saker mm
 const MAX_SPEED = 240
 const ACC = 2500
 const JUMP_VELOCITY = 608
@@ -10,6 +10,7 @@ const GRAVITY = 1250
 const PUSH_FORCE = 60
 const MAX_VELOCITY = 60
 
+#Spelaren kan vara i 3 olika states
 enum{IDLE, WALK, AIR}
 
 var state = IDLE
@@ -21,6 +22,7 @@ var jump_buffer: float = 0.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var box_ray2: RayCast2D = $BoxRay2
 
+#Gör så att dessa states kan nås hela tiden
 ############### GAME LOOP ##############################
 func _physics_process(delta: float) -> void:
 	match state:
@@ -34,6 +36,7 @@ func _physics_process(delta: float) -> void:
 
 
 ############### GENERAL HELP FUNCTIONS ########################
+#Basic movement funktioner, görs så att spelaren kan röra på sig
 func _movement(delta: float, input_x: float) -> void:
 	if up_direction.is_equal_approx(Vector2.UP) or up_direction.is_equal_approx(Vector2.DOWN):
 		if input_x != 0:
@@ -44,7 +47,7 @@ func _movement(delta: float, input_x: float) -> void:
 		velocity.y += -up_direction.y * GRAVITY * delta
 		
 
-		
+		#Kod som gör det möjligt för craten at funka, gör så att dess collision fungerar, och att man kan stå på den utan att den buggar ur.
 		if not box_ray2.is_colliding():
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
@@ -67,6 +70,7 @@ func _movement(delta: float, input_x: float) -> void:
 		apply_floor_snap()
 		move_and_slide()
 
+#Gör så att ifall man går till vänster så kollar gubben vänster och v.v
 func _update_direction(input_x: float) -> void:
 	if input_x > 0:
 		anim.flip_h = true
@@ -76,6 +80,7 @@ func _update_direction(input_x: float) -> void:
 
 
 ############### STATE FUNCTIONS ########################
+#Mer basic movement funktioner. Gör animationerna till ifall jag går höger/vänster eller hoppar
 func _idle_state(delta: float) -> void:
 	#1
 	if Input.is_action_just_pressed("big_jump"):
@@ -84,7 +89,7 @@ func _idle_state(delta: float) -> void:
 	_update_direction(input_x)
 	#2
 	_movement(delta, input_x)
-	
+	#Gör så att ifall jag är på marken så är jag nu i walk state och inte air state längre
 	if velocity.length() > 0 and is_on_floor():
 		_enter_walk_state()
 	elif not is_on_floor():
@@ -92,6 +97,7 @@ func _idle_state(delta: float) -> void:
 	
 func _walk_state(delta: float) -> void:
 	#1
+	#Ungefär samma kod som innan, gör bara så att ifall spelaren står still så går den in i idle state
 	if Input.is_action_just_pressed("big_jump"):
 		_enter_air_state(true)
 	var input_x = Input.get_axis("big_move_left", "big_move_right")
@@ -106,6 +112,7 @@ func _walk_state(delta: float) -> void:
 
 
 func _air_state(delta: float) -> void:
+	#Air state, gör så att jag bara kan hoppa när jag står på marken, samt att ifall jag faller och tittar åt ett håll så gör spelaren det.
 	#1
 	if Input.is_action_just_pressed("big_jump"):
 		want_to_jump = true
@@ -130,6 +137,7 @@ func _air_state(delta: float) -> void:
 
 
 ############### ENTER STATE FUNCTION #######################
+#Gör de olika animationerna för de olika state som finns
 func _enter_idle_state():
 	state = IDLE
 	anim.play("Idle")
@@ -147,6 +155,6 @@ func _enter_air_state(jumping: bool):
 		velocity += up_direction*JUMP_VELOCITY
 
 
-
+#Gör så att ifall en av spelarna lämnar skärmen så restartas banan
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	LevelManager.restart_current_level()
