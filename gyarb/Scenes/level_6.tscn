@@ -31,9 +31,6 @@ position = Vector2(1192.45, 847.17)
 position = Vector2(675.472, 617.925)
 scale = Vector2(1.2, 1.2)
 
-[node name="PauseMenu" parent="CanvasLayer" index="0"]
-visible = false
-
 [node name="GreenGate" parent="." index="8" instance=ExtResource("2_yb6aw")]
 position = Vector2(396.226, 678.302)
 rotation = 3.14159
