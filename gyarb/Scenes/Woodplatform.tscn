@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckywpu2k2qw1y"]
 
 [ext_resource type="Script" uid="uid://d3whkk2nbb841" path="res://Scripts/woodplatform.gd" id="1_kvcsn"]
-[ext_resource type="Texture2D" uid="uid://pkjptkg014gm" path="res://Woodtile.png" id="2_aaynn"]
+[ext_resource type="Texture2D" uid="uid://dgj1j66a12mwh" path="res://Woodtile.png" id="2_aaynn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6bqn"]
 size = Vector2(482.017, 120.216)
@@ -57,7 +57,6 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(796, -7)
 rotation = 3.1328
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(1.99115, 1.01755)

@@ -61,5 +61,5 @@ position = Vector2(861.739, 680)
 scale = Vector2(0.25, 0.25)
 
 [node name="RedPlatform5" parent="." index="14" instance=ExtResource("3_76ybr")]
-position = Vector2(350.926, 607.407)
+position = Vector2(354.63, 592.593)
 scale = Vector2(0.25, 0.25)

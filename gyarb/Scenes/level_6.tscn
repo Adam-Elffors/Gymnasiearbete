@@ -9,6 +9,7 @@
 [node name="Level" instance=ExtResource("1_fj5rg")]
 position = Vector2(4, -106)
 scale = Vector2(1.06, 1.06)
+level = 6
 
 [node name="TileMapLayer" parent="." index="1"]
 position = Vector2(76.4151, 19.8113)

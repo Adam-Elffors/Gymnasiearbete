@@ -1,7 +1,7 @@
 extends Node2D
 
 #Konstant som har koll på antal levelar
-const LAST_LEVEL = 10
+const LAST_LEVEL = 11
 const LEVEL_PATH = "res://Scenes/level_"
 	
 @onready var anim: AnimationPlayer = $AnimationPlayer

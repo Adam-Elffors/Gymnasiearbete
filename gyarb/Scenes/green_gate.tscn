@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bso7ibfxsipta"]
 
 [ext_resource type="Script" uid="uid://5wb7mdnswueh" path="res://Scripts/green_gate.gd" id="1_u6524"]
-[ext_resource type="Texture2D" uid="uid://pkjptkg014gm" path="res://Woodtile.png" id="2_u6524"]
+[ext_resource type="Texture2D" uid="uid://dgj1j66a12mwh" path="res://Woodtile.png" id="2_u6524"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb65x"]
 size = Vector2(120, 30)

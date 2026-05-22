@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bgl6a8fiwn4hg" path="res://Scenes/level.tscn" id="1_whwiw"]
 [ext_resource type="PackedScene" uid="uid://ckywpu2k2qw1y" path="res://Scenes/Woodplatform.tscn" id="2_30022"]
-[ext_resource type="Script" uid="uid://o73egjniabpf" path="res://Scenes/winner_screen.gd" id="2_emq8g"]
+[ext_resource type="Script" uid="uid://o73egjniabpf" path="res://Scripts/winner_screen.gd" id="2_emq8g"]
 [ext_resource type="PackedScene" uid="uid://bso7ibfxsipta" path="res://Scenes/green_gate.tscn" id="3_vclxf"]
 [ext_resource type="PackedScene" uid="uid://dqrrmbcm3q7p2" path="res://Scenes/green_button.tscn" id="4_emq8g"]
 [ext_resource type="PackedScene" uid="uid://dbaha6x2va1yi" path="res://Scenes/crate.tscn" id="5_5165x"]
@@ -91,7 +91,7 @@ speed_scale = 0.6
 position = Vector2(296.522, 767.826)
 
 [node name="Crate2" parent="." index="14" instance=ExtResource("5_5165x")]
-position = Vector2(894.783, 761.739)
+position = Vector2(894.783, 767)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="15"]
 offset_left = 469.565
